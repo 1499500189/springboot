@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+<!-- 服务提供者声明名臣，必须保证服务名称的唯一性，他的名称是dubbo内部 -->
+    <dubbo:application name="004-link-provice"></dubbo:application>
+    <dubbo:protocol name="dubbo" port="20880"></dubbo:protocol>
+    <dubbo:service interface="com.wzp.wkcto.service.UserService" ref="userService" registry="N/A"></dubbo:service>
+
+    <bean id="userService" class="com.wzp.wkcto.dubbo.service.impl.UserServiceImpl"></bean>
+
+</beans>

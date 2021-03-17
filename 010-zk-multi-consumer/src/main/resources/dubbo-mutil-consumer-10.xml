@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+
+    <dubbo:application name="010-zk-multi-consumer"></dubbo:application>
+    <dubbo:registry address="zookeeper://192.168.153.128:2181" ></dubbo:registry>
+    <dubbo:reference id="userService" interface="com.wzp.dubbo.service.UserService"  version="1.0.0"></dubbo:reference>
+    <dubbo:reference id="userService2" interface="com.wzp.dubbo.service.UserService"  version="2.0.0"></dubbo:reference>
+</beans>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 th:text="${data}">展示要写的内容</h1>
+
+<h1 th:text="${user.id}"></h1>
+<h1 th:text="*{user.id}"></h1>
+
+<h1 th:object="${user}">
+    <h1 th:text="*{id}">
+    </h1>
+</h1>
+<h2> a标签的绝对路径</h2>
+<a href="http://www.baidu.com">跳转到百度</a>
+<h2>路径表达式</h2>
+<a href="/user/detail/1">绝对的</a>
+<a th:href="@{http://www.wzp.com}">路径到百度（新的方法）</a>
+<a th:href="@{http://localhost:8080}">跳转到/user/detail/1</a>
+<a th:href="@{/user/detail/1}">相对路径</a>
+
+
+
+<a th:href="@{/user/en(id=${id},name=${name},age=${age})}">传参数的</a>
+</body>
+</html>
